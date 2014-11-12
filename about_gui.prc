@@ -1,0 +1,31 @@
+HEADER
+; IDL Visual Widget Builder Resource file. Version 1
+; Generated on:	04/10/2014 16:49.59
+VERSION 1
+END
+
+WID_BASE_0 BASE 5 5 300 200
+TLB
+CAPTION "JCPDS Reader - About"
+XPAD = 3
+YPAD = 3
+SPACE = 3
+BEGIN
+  OkButton PUSHBUTTON 83 128 113 26
+  VALUE "Ok"
+  ALIGNCENTER
+  ONACTIVATE "OnPressOk"
+  END
+  WID_LABEL_0 LABEL 26 13 226 23
+  VALUE "JCPDS Reader"
+  ALIGNCENTER
+  END
+  WID_LABEL_1 LABEL 26 44 226 23
+  VALUE "Made By Przemyslaw Dera and Morgan Roman"
+  ALIGNCENTER
+  END
+  WID_LABEL_2 LABEL 26 71 226 36
+  VALUE "For More Information, Contact pdera@hawaii.edu"
+  ALIGNCENTER
+  END
+END

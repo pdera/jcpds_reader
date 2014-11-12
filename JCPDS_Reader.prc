@@ -1,0 +1,14 @@
+HEADER
+; IDL Visual Widget Builder Resource file. Version 1
+; Generated on:	02/20/2014 11:15.58
+VERSION 1
+END
+
+WID_BASE_0 BASE 5 5 300 200
+TLB
+CAPTION "IDL"
+XPAD = 3
+YPAD = 3
+SPACE = 3
+BEGIN
+END

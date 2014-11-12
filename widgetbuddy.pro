@@ -1,0 +1,35 @@
+;widget buddy
+;makes some awesome widget functionality
+
+pro common_widgets,baseid
+	;;Makes a common block called wids with two variables: widgetids and widget unames
+	;;initialize the procedure when the base is realized with common_widgets,wWidget
+	;;then widloc will access the ids of the 'child' widgets in that base
+	print,baseid
+	common wids,widgetids,widgetunames
+	N=widget_info(baseid,/n_children)
+	widgetids = widget_info(baseid,/all_children)
+	widgetunames=make_array(N,/string,value='')
+	for i=0,N-1 do begin
+		widgetunames[i]=widget_info(widgetids[i],/uname)
+	endfor
+
+	maxid=max(widgetids)
+	minid=min(widgetids)
+	widlist=make_array(maxid+1,/string,value='')
+end
+
+function widloc,uname
+	;must run common widgets procedure first
+	common wids,widgetids,widgetunames
+
+	N=size(widgetids,/n_elements)
+	for i=0,N-1 do begin
+		if widgetunames[i] eq uname then return,widgetids[i]
+	endfor
+end
+
+function widval,uname
+	widget_control,widloc(uname),get_value=val
+	return,val
+end
